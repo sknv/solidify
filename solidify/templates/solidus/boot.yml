@@ -33,7 +33,7 @@ boot:
   - tasks:
     - command: bundle install
     - command: bundle exec rake db:drop db:create
-    - command: rails generate spree:install --migrate=false --sample=false --seed=false
+    - command: bundle exec rails generate spree:install --migrate=false --sample=false --seed=false
 
   - snippets:
     - file: config/initializers/spree.rb
@@ -67,6 +67,6 @@ boot:
           with: '# Spree::Core::Engine.load_seed if defined?(Spree::Core)'
 
   - tasks:
-    - command: rails generate solidus_i18n:install
+    - command: bundle exec rails generate solidus_i18n:install
     - command: bundle exec rake db:seed
     - command: echo 'All set, rock on!'
