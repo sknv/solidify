@@ -1,0 +1,72 @@
+---
+boot:
+  - snippets:
+    - file: Gemfile
+      insert:
+        - code: |
+                gem 'bourbon'
+                gem 'puma'
+                gem 'solidus'
+                gem 'solidus_auth_devise'
+                gem 'solidus_i18n'
+          where: end
+      replace:
+        - code: gem 'coffee-rails'
+          with: "# gem 'coffee-rails'"
+
+    - file: config/application.rb
+      insert:
+        - code: |2+
+                config.time_zone = 'Europe/Moscow'
+                config.i18n.default_locale = :ru
+
+          where: after
+          selector: |
+                    class Application < Rails::Application
+
+    # Speed up Solidus in development mode
+    - file: config/environments/development.rb
+      replace:
+        - code: 'config.assets.debug = true'
+          with: 'config.assets.debug = false'
+
+  - tasks:
+    - command: bundle install
+    - command: bundle exec rake db:drop db:create
+    - command: rails generate spree:install --migrate=false --sample=false --seed=false
+
+  - snippets:
+    - file: config/initializers/spree.rb
+      replace:
+        - code: config.currency = "USD"
+          with: config.currency = 'RUB'
+        - code: config.locale = 'en'
+          with: config.locale = 'ru'
+
+    - file: db/seeds.rb
+      insert:
+        - code: |+
+                # Do not load default Solidus seeds
+                # Load custom seeds from default/spree dir instead
+
+                # Add Carmen counfiguration to localize seed data
+                require 'carmen'
+                Carmen.i18n_backend.locale = :ru
+
+                # Loads seed data out of default dir
+                default_path = File.join(File.dirname(__FILE__), 'default')
+
+                Rake::Task['db:load_dir'].reenable
+                Rake::Task['db:load_dir'].invoke(default_path)
+
+          where: before
+          selector: |
+                    Spree::Core::Engine.load_seed if defined?(Spree::Core)
+      replace:
+        - code: Spree::Core::Engine.load_seed if defined?(Spree::Core)
+          with: '# Spree::Core::Engine.load_seed if defined?(Spree::Core)'
+
+  - tasks:
+    - command: rails generate solidus_i18n:install
+    - command: bundle exec rake db:seed
+    - command: echo 'All set, rock on!'

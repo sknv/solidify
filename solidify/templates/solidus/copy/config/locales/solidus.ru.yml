@@ -1,0 +1,72 @@
+# Additional Solidus russian locale
+
+ru:
+  activerecord:
+    models:
+      spree/refund_reason:
+        many: "Причин возмещения"
+        one: "Причина возмещения"
+        other: "Причины возмещения"
+      spree/stock_movement:
+        one: "Движение по складам"
+        other: "Движения по складам"
+  spree:
+    admin:
+      tab:
+        stock_items: "Управление запасами"
+        stock_transfers: "Движения товаров"
+      user:
+        store_credit: "Кредит магазина"
+    api:
+      access: "Доступ к API"
+      clear_key: "Очистить ключ"
+      generate_key: "Сгенерировать ключ"
+      key: "Ключ"
+      no_key: "Нет ключа"
+      regenerate_key: "Перегенерировать ключ"
+    back_to_countries_list: "Назад к списку стран"
+    back_to_orders_list: "Назад к списку заказов"
+    back_to_payment_methods_list: "Назад к списку способов оплаты"
+    back_to_reports_list: "Назад к списку отчетов"
+    back_to_shipping_categories_list: "Назад к списку категорий доставки"
+    back_to_shipping_methods_list: "Назад к списку способов доставки"
+    back_to_stock_locations_list: "Назад к списку адресов складов"
+    back_to_stock_movements_list: "Назад к списку движений по складу"
+    back_to_stock_transfers_list: "Назад к списку движений по складу"
+    back_to_tax_categories_list: "Назад к списку категорий налогов"
+    back_to_tax_rates_list: "Назад к списку налоговых ставок"
+    back_to_taxonomies_list: "Назад к списку таксономий"
+    back_to_trackers_list: "Назад к списку трекеров"
+    back_to_zones_list: "Назад к списку торговых зон"
+    check_stock_on_transfer: "Проверить склад при списании"
+    editing_payment_method: "Редактирование способа оплаты"
+    editing_stock_location: "Редактирование адреса склада"
+    hidden: "Скрыто"
+    i18n:
+      locales_displayed_on_frontend_select_box: "Доступные переводы"
+    listing_countries: "Список стран"
+    listing_orders: "Список заказов"
+    listing_products: "Список товаров"
+    listing_reports: "Список отчетов"
+    listing_tax_categories: "Список категорий налогов"
+    listing_users: "Список пользователей"
+    manage_stock: "Управление запасами"
+    new_refund_reason: "Новая причина возмещения"
+    no_variants_found: "Не найдено ни одного варианта"
+    promotion_categories: "Категории акций"
+    refund: "Возмещение"
+    refund_reasons: "Причины возмещения"
+    restock_inventory: "Пополнение склада"
+    return_reasons: "Причины возврата"
+    shipment_number: "Номер отгрузки"
+    show_only_open_transfers: "Показывать только открытые движения"
+    source_location: "Исходное местоположение"
+    state: "Состояние"
+    stock: "Запасы"
+    stock_item_id: "Товар на складе"
+    store_credit_category:
+      default: "По умолчанию"
+    tax_code: "Код налога"
+    transfer_number: "Номер движения"
+    try_changing_search_values: "Попробуйте изменить условия поиска"
+    variant_search_placeholder: "Артикул или Значение опции"
