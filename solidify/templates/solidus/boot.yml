@@ -34,6 +34,7 @@ boot:
     - command: bundle install
     - command: bundle exec rake db:drop db:create
     - command: bundle exec rails generate spree:install --migrate=false --sample=false --seed=false
+    - command: bundle exec rake railties:install:migrations
 
   - snippets:
     - file: config/initializers/spree.rb
