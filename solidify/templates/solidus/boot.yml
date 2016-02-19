@@ -30,7 +30,24 @@ boot:
         - code: 'config.assets.debug = true'
           with: 'config.assets.debug = false'
 
+    - file: app/assets/javascripts/application.js
+      delete:
+        - code: |
+                //= require_tree .
+      insert:
+        - code: |
+
+                //= require common
+          where: end
+      replace:
+        - code: |
+                //= require jquery
+          with: |
+                //= require jquery2
+
   - tasks:
+    - command: rm app/assets/stylesheets/application.css
+    - command: rm app/views/layouts -r
     - command: bundle install
     - command: bundle exec rake db:drop db:create
     - command: bundle exec rails generate spree:install --migrate=false --sample=false --seed=false
