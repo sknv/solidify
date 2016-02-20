@@ -88,3 +88,4 @@ boot:
     - command: bundle exec rails generate solidus_i18n:install
     - command: bundle exec rake db:seed
     - command: echo 'All set, rock on!'
+    - command: echo "Do not forget to run 'Spree::Store.first.update_attribute(:default, true)' from rails console"
