@@ -10,7 +10,14 @@ ru:
       spree/stock_movement:
         one: "Движение по складам"
         other: "Движения по складам"
+  devise:
+    failure:
+      already_authenticated: "Вы уже вошли в магазин"
+    sessions:
+      spree_user:
+        signed_out: "Вы вышли из магазина"
   spree:
+    add_taxon: 'Добавить таксон'
     admin:
       tab:
         stock_items: "Управление запасами"
@@ -43,6 +50,7 @@ ru:
     editing_stock_location: "Редактирование адреса склада"
     hidden: "Скрыто"
     i18n:
+      choose_language: "Выберите язык"
       locales_displayed_on_frontend_select_box: "Доступные переводы"
     listing_countries: "Список стран"
     listing_orders: "Список заказов"
@@ -51,6 +59,7 @@ ru:
     listing_tax_categories: "Список категорий налогов"
     listing_users: "Список пользователей"
     manage_stock: "Управление запасами"
+    meta_title: 'Заголовок'
     new_refund_reason: "Новая причина возмещения"
     no_variants_found: "Не найдено ни одного варианта"
     promotion_categories: "Категории акций"
