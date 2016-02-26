@@ -7,6 +7,7 @@ boot:
                 gem 'autoprefixer-rails'
                 gem 'bootstrap', '~> 4.0.0.alpha3'
                 gem 'puma'
+                gem 'solidus'
                 gem 'solidus_auth_devise'
                 gem 'solidus_i18n'
           where: end
