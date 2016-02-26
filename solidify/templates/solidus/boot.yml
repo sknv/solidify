@@ -4,15 +4,12 @@ boot:
     - file: Gemfile
       insert:
         - code: |
-                gem 'bourbon'
+                gem 'autoprefixer-rails'
+                gem 'bootstrap', '~> 4.0.0.alpha3'
                 gem 'puma'
-                gem 'solidus'
                 gem 'solidus_auth_devise'
                 gem 'solidus_i18n'
           where: end
-      replace:
-        - code: gem 'coffee-rails'
-          with: "# gem 'coffee-rails'"
 
     - file: config/application.rb
       insert:
@@ -36,6 +33,7 @@ boot:
                 //= require_tree .
       insert:
         - code: |
+                //= require bootstrap_custom
 
                 //= require common
           where: end

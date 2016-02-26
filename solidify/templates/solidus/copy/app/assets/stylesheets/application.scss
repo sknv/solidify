@@ -1,5 +1,5 @@
-@import 'bourbon';
-@import 'normalize';
-@import 'flexboxgrid';
+// Custom bootstrap variables must be set or import before bootstrap itself.
+@import 'bootstrap_variables';
+@import 'bootstrap_custom';
 
 @import 'common';
