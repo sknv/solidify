@@ -5,6 +5,7 @@ boot:
       insert:
         - code: |
                 gem 'autoprefixer-rails'
+                gem 'bootstrap-sass'
                 gem 'solidus'
                 gem 'solidus_auth_devise'
                 gem 'solidus_i18n'
@@ -36,6 +37,7 @@ boot:
                 //= require_tree .
       insert:
         - code: |
+                //= require bootstrap_custom
 
                 //= require common
           where: end
