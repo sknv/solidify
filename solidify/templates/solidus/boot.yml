@@ -5,10 +5,10 @@ boot:
       insert:
         - code: |
                 gem 'autoprefixer-rails'
-                gem 'bootstrap-sass'
-                gem 'solidus'
-                gem 'solidus_auth_devise'
-                gem 'solidus_i18n'
+                gem 'bootstrap-sass', '~> 3.3.6'
+                gem 'solidus', '~> 1.2.2'
+                gem 'solidus_auth_devise', '~> 1.3.0'
+                gem 'solidus_i18n', '~> 1.0.0'
                 gem 'puma'
           where: end
       replace:
